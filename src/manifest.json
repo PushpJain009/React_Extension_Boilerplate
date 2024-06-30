@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "OVO LinkedIn Extension",
+  "description": "Generate a comment from post content and AI modal",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7fW5LMtUsaZyuIi2SJToQpVaF3yL1Z0jWFcb/W524FUo0s6g5u/1pDyAPZO82aRSqdoHaJT7vhOyqjKHkLaincd8xZCQtab+r/GV9HFmfEEhaZDccbSWn/3rdByY7pbxUwPLzhzKlrmYWViLA0l1HmrXvYsjChHh9+k7Hcnm4ZEm7rCUmxD8xdA6FcyubwbjXyhkgDJivSWSG/TuPVoOPmrY7APeao7zM5+U9TJ/yAd4nptN201+Lbz16rno7X5r4HVXbK8H/8otE5WKjti6pEgz2TUERJosIaInlQUHWKCXKZdAFg6QYPnah3n3fyQy7lEBocTWDJffAe4UlztPkQIDAQAB",
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
+  "permissions": ["tabs", "activeTab", "storage"],
+  "action": {},
+  "icons": {},
+  "content_scripts": [
+    {
+      "matches": ["*://www.linkedin.com/*"],
+      "js": ["contentScript.bundle.js"],
+      "css": ["content.styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content.styles.css"],
+      "matches": ["*://www.linkedin.com/*"]
+    }
+  ]
+}
